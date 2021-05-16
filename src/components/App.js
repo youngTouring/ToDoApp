@@ -7,7 +7,7 @@ class App extends Component {
   
   state = {
     tasks: [
-      { id: 0,text: 'zagrać se w gierke',date: '2021-20-06',important: false,active: true,finishDate: null},
+      { id: 0,text: 'zagrać se w gierke',date: '2021-05-15',important: false,active: true,finishDate: null},
       { id: 1, text: "zrobić dobry uczynek", date: '2020-11-12', important: false, active: true, finishDate: null },
       { id: 2, text: "pomalować dom po sylwestrze", date: '2019-09-11', important: false, active: true, finishDate: null },
       { id: 3, text: "schudnąć 30 kilogramów", date: '2019-05-20', important: true, active: true, finishDate: null },
@@ -61,7 +61,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        TODO APP
+        <h1>TODO APP</h1>
         <AddTask/>
         <TaskList tasks = {this.state.tasks} delete = {this.deleteTask} change = {this.changeTaskStatus}/>
       </div>
