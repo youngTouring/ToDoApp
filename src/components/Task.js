@@ -18,11 +18,9 @@ const Task = (props)  => {
       </p>
     </div>
   );}else{
-    debugger
     var finish = new Date(finishDate).toISOString().slice(0,10)
     var finish2 = new Date()
     const startTask = new Date(addDate)
-    debugger
     var Difference_In_Time = finish2 - startTask
     var Difference_In_Days = Math.floor(Difference_In_Time / (1000 * 3600 * 24));
     return (
