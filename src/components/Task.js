@@ -6,7 +6,7 @@ const Task = (props)  => {
     color: 'red',
   }
 
-  const{active, text,date, id, important, finishDate} = props.task
+  const{active, text,date, id, important, finishDate, addDate} = props.task
 
   if(active){
   return(
@@ -18,10 +18,11 @@ const Task = (props)  => {
       </p>
     </div>
   );}else{
-
+    debugger
     var finish = new Date(finishDate).toISOString().slice(0,10)
     var finish2 = new Date()
-    const startTask = new Date(date)
+    const startTask = new Date(addDate)
+    debugger
     var Difference_In_Time = finish2 - startTask
     var Difference_In_Days = Math.floor(Difference_In_Time / (1000 * 3600 * 24));
     return (
@@ -29,7 +30,7 @@ const Task = (props)  => {
         <p>
           <strong>{text}</strong><em> zrobić do {date}</em><br/>
           potwierdzenie wykonania:<span> {finish}</span><br/>
-          czas realizacji: <span>{Difference_In_Days} dni </span>
+          czas realizacji: <span>{Difference_In_Days === 1 ? Difference_In_Days + ' dzień' : Difference_In_Days + ' dni'} </span>
           <button onClick = {() => props.delete(id)} >X</button>
           
         </p>
