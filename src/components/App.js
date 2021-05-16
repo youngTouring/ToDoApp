@@ -4,7 +4,7 @@ import TaskList from './TaskList';
 import './App.css';
 
 class App extends Component {
-  
+  counter = 0;
   state = {
     tasks: [
       { id: 0,text: 'zagrać se w gierke',date: '2021-05-15',important: false,active: true,finishDate: null, addDate: new Date()},
@@ -51,18 +51,26 @@ class App extends Component {
         task.finishDate = new Date().getTime()
       }
     })
-
     this.setState({
       tasks
     })
-
+  }
+  addTask = (text,date,important) => {
+    const task = {
+      id: this.counter,text: text,date: date,important: important,active: true,finishDate: null, addDate: new Date()
+    }
+    this.counter++
+    this.setState(prevState => ({
+      tasks: [...prevState.tasks, task]
+    }))
+    return true
   }
   
   render() {
     return (
       <div className="App">
         <h1>TODO APP</h1>
-        <AddTask/>
+        <AddTask add = {this.addTask} />
         <TaskList tasks = {this.state.tasks} delete = {this.deleteTask} change = {this.changeTaskStatus}/>
       </div>
     );
