@@ -7,7 +7,7 @@ class App extends Component {
   counter = 0;
   state = {
     tasks: [
-      { id: 0,text: 'zagrać se w gierke',date: '2021-05-15',important: false,active: true,finishDate: null, addDate: new Date()},
+      { id: 0, text: 'zagrać se w gierke',date: '2021-05-15',important: false,active: true,finishDate: null, addDate: new Date()},
       { id: 1, text: "zrobić dobry uczynek", date: '2020-11-12', important: false, active: true, finishDate: null, addDate: new Date()},
       { id: 2, text: "pomalować dom po sylwestrze", date: '2019-09-11', important: false, active: true, finishDate: null , addDate: new Date()},
       { id: 3, text: "schudnąć 30 kilogramów", date: '2019-05-20', important: true, active: true, finishDate: null , addDate: new Date()},
@@ -57,7 +57,7 @@ class App extends Component {
   }
   addTask = (text,date,important) => {
     const task = {
-      id: this.counter,text: text,date: date,important: important,active: true,finishDate: null, addDate: new Date()
+      id: this.counter, text: text,date: date,important: important,active: true,finishDate: null, addDate: new Date()
     }
     this.counter++
     this.setState(prevState => ({
